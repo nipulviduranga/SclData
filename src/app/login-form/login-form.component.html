@@ -22,7 +22,7 @@
               <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
             </svg>
           </div>
-          <input type="text" class="text-input" placeholder="User Name">
+          <input [(ngModel)]="username" type="text" class="text-input" placeholder="User Name">
           <div class="icon-wrap">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16">
               <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z"/>
@@ -36,7 +36,7 @@
               <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2z"/>
             </svg>
           </div>
-          <input type="password" class="text-input" placeholder="Password">
+          <input [(ngModel)]="password" type="password" class="text-input" placeholder="Password">
           <div class="icon-wrap">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-fill" viewBox="0 0 16 16">
               <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16V4H0V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5z"/>
@@ -49,7 +49,7 @@
         </section>
         <br>
         <p style="text-align: right">
-          <button mat-raised-button color="primary">Let's Go</button>
+          <button mat-raised-button color="primary" (click)="accessDashboard()" >Let's Go</button>
         </p>
 
       </div>

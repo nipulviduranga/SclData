@@ -17,6 +17,9 @@ import { NewsAndEventsComponent } from './dash-board/pages/news-and-events/news-
 import { TimeTablesComponent } from './dash-board/pages/time-tables/time-tables.component';
 import { MarksComponent } from './dash-board/pages/marks/marks.component';
 import { DefaultPageComponent } from './dash-board/pages/default-page/default-page.component';
+import { CardsComponent } from './dash-board/pages/default-page/items/cards/cards.component';
+import { AboutComponent } from './dash-board/pages/about/about.component';
+import { SignOutComponent } from './dash-board/pages/sign-out/sign-out.component';
 
 
 @NgModule({
@@ -28,7 +31,10 @@ import { DefaultPageComponent } from './dash-board/pages/default-page/default-pa
     NewsAndEventsComponent,
     TimeTablesComponent,
     MarksComponent,
-    DefaultPageComponent
+    DefaultPageComponent,
+    CardsComponent,
+    AboutComponent,
+    SignOutComponent
   ],
   imports: [
     BrowserModule,
