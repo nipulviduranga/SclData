@@ -1,0 +1,86 @@
+.navbar{
+  width: 100%;
+  height: 50px;
+  background-color: #2a3852;
+  padding: 4px 10px;
+}
+.ham-wrap{
+  width: 40px;
+  height: 40px;
+  border: 1px solid white;
+  border-radius: 2px;
+  padding: 3px 3px;
+
+}
+.ham-wrap:hover{
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(236,240,241,1);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(236,240,241,1);
+  box-shadow: 0px 0px 5px 0px rgba(236,240,241,1);
+}
+
+.line{
+  width: 20px;
+  height: 2px;
+  margin: 5px;
+  background-color: #ecf0f1;
+  padding: 2px;
+}
+.line:nth-child(2){
+  width: 15px;
+  height: 2px;
+  padding: 2px;
+  background-color: white;
+}
+.left-slider{
+  height: 100%;
+  width: 20%;
+  border: 1px solid white;
+
+  background-color: #2a3852;
+  position: absolute;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(44,62,80,1);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(44,62,80,1);
+  box-shadow: 0px 0px 5px 0px rgba(44,62,80,1);
+
+}
+.text-welcome {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+}
+.nav-list{
+
+  padding: 0;
+  list-style: none;
+  color: #ecf0f1;
+
+  li{
+    padding: 15px 0px;
+    font-family: Roboto;
+    font-size: 20px;
+    padding-left: 0;
+    border-left: 5px solid #34495e;
+
+    a{
+      text-decoration: none;
+      color: white;
+    }
+  }
+  li:hover{
+    cursor: pointer;
+    border-left: 5px solid #2980b9;
+  }
+}
+
+.user-name{
+  text-align: left;
+  font-family: Roboto;
+  color: #ecf0f1;
+  font-size: 16px;
+}
+.avatar{
+  margin-right: 5px;
+}
