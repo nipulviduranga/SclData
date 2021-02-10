@@ -10,10 +10,9 @@ import * as React from 'react';
 })
 export class LoginFormComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router: Router) { }
 
-  ngOnInit(): void {
-  }
+
 
   accessDashboard() {
     this.router.navigate(['/DashBoard']).then(resp => {
@@ -25,5 +24,6 @@ export class LoginFormComponent implements OnInit {
   username='';
   password='';
 
-
+  ngOnInit(): void {
+  }
 }
