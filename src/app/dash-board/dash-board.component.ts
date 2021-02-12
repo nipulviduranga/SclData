@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, HostListener, Input } from '@angular/core';
 import {animate, style, transition, trigger} from '@angular/animations';
 
 @Component({
@@ -26,12 +26,22 @@ export class DashBoardComponent implements OnInit {
   }
 
   toggleSlide() {
-    /* if (this.leftSideVisibleState){
+/*
+     if (this.leftSideVisibleState){
        this.leftSideVisibleState=false;
      }else{
        this.leftSideVisibleState=true;
-     }*/
+     }
+*/
 
     this.leftSideVisibleState = !this.leftSideVisibleState;
   }
+ /* @HostListener('document:click')
+  clickInside() {
+    if (this.leftSideVisibleState === true) {
+
+      console.log(this.leftSideVisibleState);
+    }
+  }*/
+
 }

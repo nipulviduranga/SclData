@@ -1,6 +1,6 @@
 <nav class="navbar">
 
-      <div class="ham-wrap" (click)="toggleSlide()">
+      <div class="ham-wrap" (click)="toggleSlide()" >
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
@@ -18,9 +18,9 @@
       </div>
 
 
-</nav>
+</nav >
 
-<div class="left-slider" *ngIf="leftSideVisibleState" [@sliderLeft]>
+<div class="left-slider" *ngIf="leftSideVisibleState" [@sliderLeft] >
   <p class="text-welcome">Hello Students</p>
   <ul class="nav-list">
     <li>
@@ -33,7 +33,7 @@
       <a routerLink="/DashBoard/TimeTables" routerLinkActive="active">Time Tables</a>
     </li>
     <li>
-      <a routerLink="/DashBoard/Marks" routerLinkActive="active">Marks</a>
+      <a routerLink="/DashBoard/MyClass" routerLinkActive="active">My Class</a>
     </li>
     <li>
       <a routerLink="/DashBoard/About" routerLinkActive="active">About</a>
