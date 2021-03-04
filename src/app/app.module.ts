@@ -46,6 +46,11 @@ import { Grade12MarksComponent } from './dash-board/pages/my-class/grade12/grade
 import { Grade13PapersComponent } from './dash-board/pages/my-class/grade13/grade13-papers/grade13-papers.component';
 import { Grade13LessonsComponent } from './dash-board/pages/my-class/grade13/grade13-lessons/grade13-lessons.component';
 import { Grade13MarksComponent } from './dash-board/pages/my-class/grade13/grade13-marks/grade13-marks.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {MatFormFieldModule, MatLabel} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import { MarksEnvironmentComponent } from './dash-board/pages/my-class/marks-environment/marks-environment.component';
 
 
 @NgModule({
@@ -84,7 +89,8 @@ import { Grade13MarksComponent } from './dash-board/pages/my-class/grade13/grade
     Grade12MarksComponent,
     Grade13PapersComponent,
     Grade13LessonsComponent,
-    Grade13MarksComponent
+    Grade13MarksComponent,
+    MarksEnvironmentComponent
   ],
   imports: [
     BrowserModule,
@@ -94,6 +100,11 @@ import { Grade13MarksComponent } from './dash-board/pages/my-class/grade13/grade
     MatButtonModule,
     FormsModule,
     RouterModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
+
 
   ],
   providers: [],

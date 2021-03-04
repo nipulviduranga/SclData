@@ -9,7 +9,8 @@ import * as React from 'react';
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent implements OnInit {
-
+  username='';
+  password='';
   constructor(private router: Router) { }
 
 
@@ -21,8 +22,6 @@ export class LoginFormComponent implements OnInit {
       console.log(error);
     });
   }
-  username='';
-  password='';
 
   ngOnInit(): void {
   }

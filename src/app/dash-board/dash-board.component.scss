@@ -76,11 +76,30 @@
 }
 
 .user-name{
-  text-align: left;
-  font-family: Roboto;
-  color: #ecf0f1;
-  font-size: 16px;
+  font-size: 20px;
+  justify-content: right;
+  margin-right: 0;
+  padding-right: 0;
+
+
 }
 .avatar{
   margin-right: 5px;
+}
+.nav-item{
+  font-size: 20px;
+  margin-left: 10px;
+}
+.toggel-bt{
+  margin-left: 0px;
+  justify-content: left;
+}
+.navbar-brand{
+  padding-right: 0;
+  margin-right: 0;
+}
+.navbox{
+  width: 100px;
+  height: 200px;
+  background-color: aqua;
 }
