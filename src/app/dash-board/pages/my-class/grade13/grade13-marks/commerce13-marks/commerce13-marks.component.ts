@@ -3,11 +3,11 @@ import {StudentsService} from '../../../../../../service/students.service';
 import studentDTO from '../../../../../../dto/studentALDTO';
 
 @Component({
-  selector: 'app-tec-marks',
-  templateUrl: './tec-marks.component.html',
-  styleUrls: ['./tec-marks.component.scss']
+  selector: 'app-commerce-marks',
+  templateUrl: './commerce13-marks.component.html',
+  styleUrls: ['./commerce13-marks.component.scss']
 })
-export class TecMarksComponent implements OnInit {
+export class Commerce13MarksComponent implements OnInit {
   @ViewChild('first', {read: ElementRef}) firstName: ElementRef<HTMLElement>;
   name = '';
   subCom_Maths = 0;
@@ -38,15 +38,16 @@ export class TecMarksComponent implements OnInit {
   total = 0;
   nameForUpdate = '';
   idForUpdate = '';
-  subETForUpdate = 0;
-  subBSTForUpdate = 0;
-  subSFTForUpdate = 0;
-  subAgryForUpdate = 0;
+  subAccountingForUpdate = 0;
+  subBSForUpdate = 0;
+  subLogicForUpdate = 0;
+  subBusinessStacForUpdate = 0;
   subEnglishForUpdate = 0;
   subICTForUpdate = 0;
-  subGeographyForUpdate = 0;
+  subEconomicsForUpdate = 0;
+  subPoliticsForUpdate = 0;
   subGITForUpdate = 0;
-  term = 'Grade12TecTerm1';
+  term = 'Grade12ComTerm1';
 
   constructor(private studentsService: StudentsService) { }
   // dropdown data
@@ -164,14 +165,16 @@ export class TecMarksComponent implements OnInit {
 
     document.getElementById('openModel').click();
     this.nameForUpdate = student.StudentName;
-    this.subETForUpdate = student.SubET;
-    this.subBSTForUpdate = student.SubBST;
+    this.subBSForUpdate = student.SubBS;
+    this.subAccountingForUpdate = student.SubAccounting;
+    this.subLogicForUpdate = student.SubLogic;
     this.subEnglishForUpdate = student.SubEnglish;
     this.subICTForUpdate = student.SubICT;
-    this.subSFTForUpdate = student.SubSFT;
-    this.subAgryForUpdate = student.SubAgry;
+    this.subEconomicsForUpdate = student.SubEconomics;
+    this.subPoliticsForUpdate = student.SubPolitics;
     this.subGITForUpdate = student.SubGIT;
-    this.subGeographyForUpdate = student.SubGeography;
+    this.subBusinessStacForUpdate = student.SubBusinessStac;
+    this.subBS = student.SubBS;
   }
   updateStudent(term: string){
 
@@ -182,24 +185,24 @@ export class TecMarksComponent implements OnInit {
       Number(this.subChemistry),
       Number(this.subICTForUpdate),
       Number(this.subBio),
-      Number(this.subETForUpdate),
-      Number(this.subSFTForUpdate),
-      Number(this.subAgryForUpdate),
-      Number(this.subBSTForUpdate),
-      Number(this.subAccounting),
-      Number(this.subBS),
-      Number(this.subEconomics),
+      Number(this.subET),
+      Number(this.subSFT),
+      Number(this.subAgry),
+      Number(this.subBST),
+      Number(this.subAccountingForUpdate),
+      Number(this.subBSForUpdate),
+      Number(this.subEconomicsForUpdate),
       Number(this.subSinhala),
-      Number(this.subLogic),
-      Number(this.subGeographyForUpdate),
-      Number(this.subPolitics),
+      Number(this.subLogicForUpdate),
+      Number(this.subGeography),
+      Number(this.subPoliticsForUpdate),
       Number(this.subBC),
       Number(this.subLanguages),
       Number(this.subHistory),
       Number(this.subAesthetic),
       Number(this.subEnglishForUpdate),
       Number(this.subGITForUpdate),
-      Number(this.subBusinessStac)
+      Number(this.subBusinessStacForUpdate)
     );
     this.studentsService.updateStudentAL(dto , this.idForUpdate, term).subscribe(result => {
       alert('Updated');
@@ -211,16 +214,16 @@ export class TecMarksComponent implements OnInit {
 
   getTerm(value: string) {
     if (value === '1st'){
-      this.term = 'Grade13TecTerm1';
-      this.loadData('Grade13TecTerm1');
+      this.term = 'Grade13ComTerm1';
+      this.loadData('Grade13ComTerm1');
 
     }else if (value === '2nd'){
-      this.term = 'Grade13TecTerm2';
-      this.loadData('Grade13TecTerm2');
+      this.term = 'Grade13ComTerm2';
+      this.loadData('Grade13ComTerm2');
 
     }else if (value === '3rd'){
-      this.term = 'Grade13TecTerm3';
-      this.loadData('Grade13TecTerm3');
+      this.term = 'Grade13ComTerm3';
+      this.loadData('Grade13ComTerm3');
 
     }
 

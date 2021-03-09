@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CommerceMarksComponent } from './commerce-marks.component';
+import { Art13MarksComponent } from './art13-marks.component';
 
-describe('CommerceMarksComponent', () => {
-  let component: CommerceMarksComponent;
-  let fixture: ComponentFixture<CommerceMarksComponent>;
+describe('ArtMarksComponent', () => {
+  let component: Art13MarksComponent;
+  let fixture: ComponentFixture<Art13MarksComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CommerceMarksComponent ]
+      declarations: [ Art13MarksComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CommerceMarksComponent);
+    fixture = TestBed.createComponent(Art13MarksComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

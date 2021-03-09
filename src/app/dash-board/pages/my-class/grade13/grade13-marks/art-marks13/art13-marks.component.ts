@@ -3,11 +3,11 @@ import {StudentsService} from '../../../../../../service/students.service';
 import studentDTO from '../../../../../../dto/studentALDTO';
 
 @Component({
-  selector: 'app-bio-marks',
-  templateUrl: './bio-marks.component.html',
-  styleUrls: ['./bio-marks.component.scss']
+  selector: 'app-art-marks',
+  templateUrl: './art13-marks.component.html',
+  styleUrls: ['./art13-marks.component.scss']
 })
-export class BioMarksComponent implements OnInit {
+export class Art13MarksComponent implements OnInit {
   @ViewChild('first', {read: ElementRef}) firstName: ElementRef<HTMLElement>;
   name = '';
   subCom_Maths = 0;
@@ -19,7 +19,7 @@ export class BioMarksComponent implements OnInit {
   subSFT = 0;
   subBST = 0;
   subAccounting = 0;
-  subBusinessStac = 0;
+  subBusinessStac=0;
   subBS = 0;
   subSinhala = 0;
   subEnglish = 0;
@@ -38,13 +38,20 @@ export class BioMarksComponent implements OnInit {
   total = 0;
   nameForUpdate = '';
   idForUpdate = '';
-  subBioForUpdate = 0;
-  subPhysicsForUpdate = 0;
-  subChemistryForUpdate = 0;
-  subEnglishForUpdate = 0;
+  subLanguagesForUpdate = 0;
+  subSinhalaForUpdate = 0;
+  subLogicForUpdate = 0;
+  subBCForUpdate = 0;
   subAgryForUpdate = 0;
+  subEnglishForUpdate = 0;
+  subICTForUpdate = 0;
+  subAestheticForUpdate = 0;
+  subGeographyForUpdate = 0;
+  subHistoryForUpdate = 0;
+  subEconomicsForUpdate = 0;
+  subPoliticsForUpdate = 0;
   subGITForUpdate = 0;
-  term = 'Grade12MathsTerm1';
+  term = 'Grade12ArtTerm1';
 
   constructor(private studentsService: StudentsService) { }
   // dropdown data
@@ -105,7 +112,7 @@ export class BioMarksComponent implements OnInit {
   }
 
   saveStudent(term: string) {
-    if ( this.name!=='' &&this.subCom_Maths < 101 && this.subPhysics < 101 && this.subChemistry < 101 && this.subICT < 101 && this.subBio < 101 && this.subET < 101 && this.subSFT < 101 && this.subAgry<101 && this.subBST<101&& this.subAccounting<101&& this.subBS<101&& this.subBST<101&& this.subEconomics<101&& this.subSinhala<101 && this.subLogic<101&& this.subGeography<101&& this.subPolitics<101&& this.subBC<101&& this.subLanguages<101&& this.subHistory<101&& this.subAesthetic<101 && this.subEnglish<101&& this.subGIT<101 && this.subBusinessStac<101) {
+    if ( this.name!=='' &&this.subCom_Maths < 101 && this.subPhysics < 101 && this.subChemistry < 101 && this.subICT < 101 && this.subBio < 101 && this.subET < 101 && this.subSFT < 101 && this.subAgry<101 && this.subBST<101&& this.subAccounting<101&& this.subBS<101&& this.subBST<101&& this.subEconomics<101&& this.subSinhala<101 && this.subLogic<101&& this.subGeography<101&& this.subPolitics<101&& this.subBC<101&& this.subLanguages<101&& this.subHistory<101&& this.subAesthetic<101 && this.subEnglish<101&& this.subGIT<101) {
       const dto = new studentDTO(
         this.name.trim(),
         Number(this.subCom_Maths),
@@ -130,7 +137,7 @@ export class BioMarksComponent implements OnInit {
         Number(this.subAesthetic),
         Number(this.subEnglish),
         Number(this.subGIT),
-        Number(this.subBusinessStac)
+        this.subBusinessStac
       );
 
       this.studentsService.saveStudentAL(dto, term).subscribe(resp => {
@@ -162,11 +169,18 @@ export class BioMarksComponent implements OnInit {
 
     document.getElementById('openModel').click();
     this.nameForUpdate = student.StudentName;
-    this.subBioForUpdate = student.SubBio;
-    this.subPhysicsForUpdate = student.SubPhysics;
+    this.subSinhalaForUpdate = student.SubSinhala;
+    this.subLanguagesForUpdate = student.SubLanguages;
+    this.subLogicForUpdate = student.SubLogic;
+    this.subBCForUpdate = student.SubBC;
     this.subEnglishForUpdate = student.SubEnglish;
+    this.subHistoryForUpdate = student.SubHistory;
     this.subAgryForUpdate = student.SubAgry;
-    this.subChemistryForUpdate = student.SubChemistry;
+    this.subICTForUpdate = student.SubICT;
+    this.subAestheticForUpdate = student.SubAesthetic;
+    this.subGeographyForUpdate = student.SubGeography;
+    this.subEconomicsForUpdate = student.SubEconomics;
+    this.subPoliticsForUpdate = student.SubPolitics;
     this.subGITForUpdate = student.SubGIT;
   }
   updateStudent(term: string){
@@ -174,28 +188,28 @@ export class BioMarksComponent implements OnInit {
     const dto = new studentDTO(
       this.nameForUpdate.trim(),
       Number(this.subCom_Maths),
-      Number(this.subPhysicsForUpdate),
-      Number(this.subChemistryForUpdate),
-      Number(this.subICT),
-      Number(this.subBioForUpdate),
+      Number(this.subPhysics),
+      Number(this.subChemistry),
+      Number(this.subICTForUpdate),
+      Number(this.subBio),
       Number(this.subET),
       Number(this.subSFT),
       Number(this.subAgryForUpdate),
       Number(this.subBST),
       Number(this.subAccounting),
       Number(this.subBS),
-      Number(this.subEconomics),
-      Number(this.subSinhala),
-      Number(this.subLogic),
-      Number(this.subGeography),
-      Number(this.subPolitics),
-      Number(this.subBC),
-      Number(this.subLanguages),
-      Number(this.subHistory),
-      Number(this.subAesthetic),
+      Number(this.subEconomicsForUpdate),
+      Number(this.subSinhalaForUpdate),
+      Number(this.subLogicForUpdate),
+      Number(this.subGeographyForUpdate),
+      Number(this.subPoliticsForUpdate),
+      Number(this.subBCForUpdate),
+      Number(this.subLanguagesForUpdate),
+      Number(this.subHistoryForUpdate),
+      Number(this.subAestheticForUpdate),
       Number(this.subEnglishForUpdate),
       Number(this.subGITForUpdate),
-      Number(this.subBusinessStac)
+      this.subBusinessStac
     );
     this.studentsService.updateStudentAL(dto , this.idForUpdate, term).subscribe(result => {
       alert('Updated');
@@ -207,16 +221,16 @@ export class BioMarksComponent implements OnInit {
 
   getTerm(value: string) {
     if (value === '1st'){
-      this.term = 'Grade13BioTerm1';
-      this.loadData('Grade13BioTerm1');
+      this.term = 'Grade13ArtTerm1';
+      this.loadData('Grade13ArtTerm1');
 
     }else if (value === '2nd'){
-      this.term = 'Grade13BioTerm2';
-      this.loadData('Grade13BioTerm2');
+      this.term = 'Grade13ArtTerm2';
+      this.loadData('Grade13ArtTerm2');
 
     }else if (value === '3rd'){
-      this.term = 'Grade13BioTerm3';
-      this.loadData('Grade13BioTerm3');
+      this.term = 'Grade13ArtTerm3';
+      this.loadData('Grade13ArtTerm3');
 
     }
 

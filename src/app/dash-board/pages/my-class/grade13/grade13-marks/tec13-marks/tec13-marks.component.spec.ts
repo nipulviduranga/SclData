@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BioMarksComponent } from './bio-marks.component';
+import { Tec13MarksComponent } from './tec13-marks.component';
 
-describe('BioMarksComponent', () => {
-  let component: BioMarksComponent;
-  let fixture: ComponentFixture<BioMarksComponent>;
+describe('TecMarksComponent', () => {
+  let component: Tec13MarksComponent;
+  let fixture: ComponentFixture<Tec13MarksComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BioMarksComponent ]
+      declarations: [ Tec13MarksComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BioMarksComponent);
+    fixture = TestBed.createComponent(Tec13MarksComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

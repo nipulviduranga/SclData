@@ -57,6 +57,12 @@ import { CommerceMarksComponent } from './dash-board/pages/my-class/grade12/grad
 import { TecMarksComponent } from './dash-board/pages/my-class/grade12/grade12-marks/tec-marks/tec-marks.component';
 import { MathsMarksComponent } from './dash-board/pages/my-class/grade12/grade12-marks/maths-marks/maths-marks.component';
 import { BioMarksComponent } from './dash-board/pages/my-class/grade12/grade12-marks/bio-marks/bio-marks.component';
+import {Bio13MarksComponent} from './dash-board/pages/my-class/grade13/grade13-marks/bio13-marks/bio13-marks.component';
+import {Maths13MarksComponent} from './dash-board/pages/my-class/grade13/grade13-marks/maths13-marks/maths13-marks.component';
+import {Commerce13MarksComponent} from './dash-board/pages/my-class/grade13/grade13-marks/commerce13-marks/commerce13-marks.component';
+import {Art13MarksComponent} from './dash-board/pages/my-class/grade13/grade13-marks/art-marks13/art13-marks.component';
+import {Tec13MarksComponent} from './dash-board/pages/my-class/grade13/grade13-marks/tec13-marks/tec13-marks.component';
+
 
 
 @NgModule({
@@ -102,6 +108,12 @@ import { BioMarksComponent } from './dash-board/pages/my-class/grade12/grade12-m
     TecMarksComponent,
     MathsMarksComponent,
     BioMarksComponent,
+    Bio13MarksComponent,
+    Maths13MarksComponent,
+    Commerce13MarksComponent,
+    Art13MarksComponent,
+    Tec13MarksComponent
+
 
   ],
   imports: [

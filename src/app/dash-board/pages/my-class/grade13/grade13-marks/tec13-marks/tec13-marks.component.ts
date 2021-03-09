@@ -3,11 +3,11 @@ import {StudentsService} from '../../../../../../service/students.service';
 import studentDTO from '../../../../../../dto/studentALDTO';
 
 @Component({
-  selector: 'app-maths-marks',
-  templateUrl: './maths-marks.component.html',
-  styleUrls: ['./maths-marks.component.scss']
+  selector: 'app-tec-marks',
+  templateUrl: './tec13-marks.component.html',
+  styleUrls: ['./tec13-marks.component.scss']
 })
-export class MathsMarksComponent implements OnInit {
+export class Tec13MarksComponent implements OnInit {
   @ViewChild('first', {read: ElementRef}) firstName: ElementRef<HTMLElement>;
   name = '';
   subCom_Maths = 0;
@@ -38,13 +38,15 @@ export class MathsMarksComponent implements OnInit {
   total = 0;
   nameForUpdate = '';
   idForUpdate = '';
-  subCom_MathsForUpdate = 0;
-  subPhysicsForUpdate = 0;
-  subChemistryForUpdate = 0;
+  subETForUpdate = 0;
+  subBSTForUpdate = 0;
+  subSFTForUpdate = 0;
+  subAgryForUpdate = 0;
   subEnglishForUpdate = 0;
   subICTForUpdate = 0;
+  subGeographyForUpdate = 0;
   subGITForUpdate = 0;
-  term = 'Grade12MathsTerm1';
+  term = 'Grade12TecTerm1';
 
   constructor(private studentsService: StudentsService) { }
   // dropdown data
@@ -162,32 +164,34 @@ export class MathsMarksComponent implements OnInit {
 
     document.getElementById('openModel').click();
     this.nameForUpdate = student.StudentName;
-    this.subCom_MathsForUpdate = student.SubCom_Maths;
-    this.subPhysicsForUpdate = student.SubPhysics;
+    this.subETForUpdate = student.SubET;
+    this.subBSTForUpdate = student.SubBST;
     this.subEnglishForUpdate = student.SubEnglish;
     this.subICTForUpdate = student.SubICT;
-    this.subChemistryForUpdate = student.SubChemistry;
+    this.subSFTForUpdate = student.SubSFT;
+    this.subAgryForUpdate = student.SubAgry;
     this.subGITForUpdate = student.SubGIT;
+    this.subGeographyForUpdate = student.SubGeography;
   }
   updateStudent(term: string){
 
     const dto = new studentDTO(
       this.nameForUpdate.trim(),
-      Number(this.subCom_MathsForUpdate),
-      Number(this.subPhysicsForUpdate),
-      Number(this.subChemistryForUpdate),
+      Number(this.subCom_Maths),
+      Number(this.subPhysics),
+      Number(this.subChemistry),
       Number(this.subICTForUpdate),
       Number(this.subBio),
-      Number(this.subET),
-      Number(this.subSFT),
-      Number(this.subAgry),
-      Number(this.subBST),
+      Number(this.subETForUpdate),
+      Number(this.subSFTForUpdate),
+      Number(this.subAgryForUpdate),
+      Number(this.subBSTForUpdate),
       Number(this.subAccounting),
       Number(this.subBS),
       Number(this.subEconomics),
       Number(this.subSinhala),
       Number(this.subLogic),
-      Number(this.subGeography),
+      Number(this.subGeographyForUpdate),
       Number(this.subPolitics),
       Number(this.subBC),
       Number(this.subLanguages),
@@ -207,16 +211,16 @@ export class MathsMarksComponent implements OnInit {
 
   getTerm(value: string) {
     if (value === '1st'){
-      this.term = 'Grade13MathsTerm1';
-      this.loadData('Grade13MathsTerm1');
+      this.term = 'Grade13TecTerm1';
+      this.loadData('Grade13TecTerm1');
 
     }else if (value === '2nd'){
-      this.term = 'Grade13MathsTerm2';
-      this.loadData('Grade13MathsTerm2');
+      this.term = 'Grade13TecTerm2';
+      this.loadData('Grade13TecTerm2');
 
     }else if (value === '3rd'){
-      this.term = 'Grade13MathsTerm3';
-      this.loadData('Grade13MathsTerm3');
+      this.term = 'Grade13TecTerm3';
+      this.loadData('Grade13TecTerm3');
 
     }
 

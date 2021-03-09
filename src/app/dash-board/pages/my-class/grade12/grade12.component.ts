@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {slideInAnimation} from './grade12-marks/animations';
 
 @Component({
   selector: 'app-grade12',
   templateUrl: './grade12.component.html',
   styleUrls: ['./grade12.component.scss']
+
 })
 export class Grade12Component implements OnInit {
 
