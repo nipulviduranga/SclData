@@ -1,0 +1,197 @@
+<div>
+
+  <form class="needs-validation" novalidate >
+    <div class="form-row">
+
+      <div class="col-md-4 mb-3">
+        <label for="validationCustom01">Name</label>
+        <input [(ngModel)]="name" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationCustom01" placeholder="Your Name" value="Mark" >
+
+      </div>
+      <div class="dropbox">
+        <mat-form-field appearance="fill">
+          <mat-label>Term</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let term of Terms" [value]="term.value" (click)="getTerm(term.value)">
+              {{term.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-1 mb-3">
+        <label for="validationCustom03">Sinhala</label>
+        <input [(ngModel)]="subSinhala" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationCustom03"  >
+
+      </div>
+      <div class="col-md-1 mb-3">
+        <label for="validationCustom03">Science</label>
+        <input [(ngModel)]="subScience" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationCustom04"  >
+
+      </div>
+      <div class="col-md-1 mb-3">
+        <label for="validationCustom03">Maths</label>
+        <input [(ngModel)]="subMaths" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationCustom05"  >
+
+      </div>
+      <div class="col-md-1 mb-3">
+        <label for="validationCustom03">Buddhism</label>
+        <input [(ngModel)]="subBuddhism" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationCustom06"  >
+
+      </div>
+      <div class="col-md-1 mb-3">
+        <label for="validationCustom03">English</label>
+        <input [(ngModel)]="subEnglish" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationCustom07"  >
+
+      </div>
+      <div class="col-md-1 mb-3">
+        <label for="validationCustom03">History</label>
+        <input [(ngModel)]="subHistory" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationCustom14"  >
+
+      </div>
+      <div class="col-md-1 mb-3">
+        <label for="validationCustom03">Group 1</label>
+        <input [(ngModel)]="Group1" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationCustom08"  >
+
+      </div>
+      <div class="col-md-1 mb-3">
+        <label for="validationCustom03">Group 2</label>
+        <input [(ngModel)]="Group2" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationCustom09"  >
+
+      </div>
+      <div class="col-md-1 mb-3">
+        <label for="validationCustom03">Group 3</label>
+        <input [(ngModel)]="Group3" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationCustom10"  >
+
+      </div>
+
+    </div>
+    <div class="btn-set form-row">
+      <button class="btn btn-primary" type="submit" (click)="searchStudent()">Search</button>
+      <button class="btn btn-primary" type="submit" (click)="loadData(term)">All</button>
+      <button class="btn btn-primary" type="submit" (click)="saveStudent(term)">Save</button>
+    </div>
+
+  </form>
+</div>
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Place</th>
+    <th scope="col">Name</th>
+    <th scope="col">Maths</th>
+    <th scope="col">Sinhala</th>
+    <th scope="col">English</th>
+    <th scope="col">Science</th>
+    <th scope="col">Bhuddhism</th>
+    <th scope="col">History</th>
+    <th scope="col">Group 1</th>
+    <th scope="col">Group 2</th>
+    <th scope="col">Group 3</th>
+    <th scope="col">Total</th>
+    <th scope="col">Option</th>
+
+
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let students of StudentArray; index as number" >
+    <th scope="row">{{students.other}}</th>
+    <td>{{students.StudentName}}</td>
+    <td>{{students.SubMaths}}</td>
+    <td>{{students.SubSinhala}}</td>
+    <td>{{students.SubEnglish}}</td>
+    <td>{{students.SubScience}}</td>
+    <td>{{students.SubBuddhism}}</td>
+    <td>{{students.SubHistory}}</td>
+    <td>{{students.SubGroup1}}</td>
+    <td>{{students.SubGroup2}}</td>
+    <td>{{students.SubGroup3}}</td>
+    <td>{{students.Total}}</td>
+    <td>
+      <p>
+        <button class="btn btn-sm btn-success" (click)="openModel(students,students._id)">Update</button>
+        <button class="btn btn-sm btn-danger" (click)="deleteCustomer(students._id,term)">Delete</button>
+      </p>
+    </td>
+
+  </tr>
+
+  </tbody>
+</table>
+<!-- Button trigger modal -->
+<button style="display: none" type="button" id="openModel" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Update Customer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <label for="validationCustom01">Name</label>
+          <input [(ngModel)]="nameForUpdate" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationCustom01" placeholder="Your Name" >
+
+        </div>
+        <div>
+          <label for="validationCustom03">Sinhala</label>
+          <input [(ngModel)]="subSinhalaForUpdate" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationCustom03"  >
+
+        </div>
+        <div>
+          <label for="validationCustom03">Science</label>
+          <input [(ngModel)]="subScienceForUpdate" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationCustom04">
+
+        </div>
+        <div>
+          <label for="validationCustom03">Maths</label>
+          <input [(ngModel)]="subMathsForUpdate" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationCustom05" >
+
+        </div>
+        <div>
+          <label for="validationCustom03">Buddhism</label>
+          <input [(ngModel)]="subBuddhismForUpdate" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationCustom06">
+
+        </div>
+        <div>
+          <label for="validationCustom03">English</label>
+          <input [(ngModel)]="subEnglishForUpdate" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationCustom07">
+
+        </div>
+        <div>
+          <label for="validationCustom03">History</label>
+          <input [(ngModel)]="subHistoryForUpdate" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationCustom14" >
+
+        </div>
+        <div>
+          <label for="validationCustom03">Group 1</label>
+          <input [(ngModel)]="Group1ForUpdate" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationCustom11" >
+
+        </div><div >
+        <label for="validationCustom03">Group 2</label>
+        <input [(ngModel)]="Group2ForUpdate" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationCustom12">
+
+      </div>
+        <div>
+          <label for="validationCustom03">Group 3</label>
+          <input [(ngModel)]="Group3ForUpdate" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationCustom13">
+
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="updateStudent(term)">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

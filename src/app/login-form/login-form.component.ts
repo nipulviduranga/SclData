@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Route} from '@angular/router';
+import {Router} from '@angular/router';
+import * as React from 'react';
+
 
 @Component({
   selector: 'app-login-form',
@@ -7,10 +9,20 @@ import {Route} from '@angular/router';
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent implements OnInit {
+  username='';
+  password='';
+  constructor(private router: Router) { }
 
-  constructor() { }
+
+
+  accessDashboard() {
+    this.router.navigate(['/DashBoard/Home']).then(resp => {
+      console.log('Done');
+    }).catch(error => {
+      console.log(error);
+    });
+  }
 
   ngOnInit(): void {
   }
-
 }
