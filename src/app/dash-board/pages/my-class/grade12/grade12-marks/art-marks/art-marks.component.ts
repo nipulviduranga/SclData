@@ -1,11 +1,15 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {StudentsService} from '../../../../../../service/students.service';
 import studentDTO from '../../../../../../dto/studentALDTO';
+import {fadeInAnimation} from '../../../../../../animations/FadeInAnimation';
 
 @Component({
   selector: 'app-art-marks',
   templateUrl: './art-marks.component.html',
-  styleUrls: ['./art-marks.component.scss']
+  styleUrls: ['./art-marks.component.scss'],
+  animations: [fadeInAnimation],
+  host:{'[@fadeInAnimation]':''}
+
 })
 export class ArtMarksComponent implements OnInit {
   @ViewChild('first', {read: ElementRef}) firstName: ElementRef<HTMLElement>;

@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {fadeInAnimation} from '../../../../animations/FadeInAnimation';
 
 @Component({
   selector: 'app-grade11',
   templateUrl: './grade11.component.html',
-  styleUrls: ['./grade11.component.scss']
+  styleUrls: ['./grade11.component.scss'],
+  animations: [fadeInAnimation],
+  host:{'[@fadeInAnimation]':''}
 })
 export class Grade11Component implements OnInit {
 

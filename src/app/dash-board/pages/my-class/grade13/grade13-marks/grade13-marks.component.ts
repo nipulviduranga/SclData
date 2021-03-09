@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, RouterOutlet} from '@angular/router';
 import {slideInAnimation} from '../../grade12/grade12-marks/animations';
+import {animate, state, style, transition, trigger} from '@angular/animations';
+import {host} from '@angular-devkit/build-angular/src/test-utils';
+import {fadeInAnimation} from '../../../../../animations/FadeInAnimation';
 
 @Component({
   selector: 'app-grade13-marks',
@@ -9,7 +12,8 @@ import {slideInAnimation} from '../../grade12/grade12-marks/animations';
   animations: [
     slideInAnimation
     // animation triggers go here
-  ]
+  ],
+
 })
 export class Grade13MarksComponent implements OnInit {
 
