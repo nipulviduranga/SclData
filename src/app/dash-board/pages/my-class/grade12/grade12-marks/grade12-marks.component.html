@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="box1 zone" routerLink="/DashBoard/Grade12Marks/Arts12" routerLinkActive="active"><p>Arts</p></div>
+  <div class="box2 zone" routerLink="/DashBoard/Grade12Marks/Commerce12" routerLinkActive="active"><p>Commerce</p></div>
+  <div class="box3 zone" routerLink="/DashBoard/Grade12Marks/Tec12" routerLinkActive="active"><p>Tec</p></div>
+  <div class="box4 zone" routerLink="/DashBoard/Grade12Marks/Maths12" routerLinkActive="active"><p>Maths</p></div>
+  <div class="box5 zone" routerLink="/DashBoard/Grade12Marks/Bio12" routerLinkActive="active"><p>Bio</p></div>
+</div>
+<div [@routeAnimations]="prepareRoute(outlet)">
+<router-outlet #outlet="outlet"></router-outlet>
+</div>
