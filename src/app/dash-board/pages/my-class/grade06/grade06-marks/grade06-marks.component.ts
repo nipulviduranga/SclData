@@ -2,10 +2,10 @@ import { Component, OnInit, AfterViewInit, ElementRef, OnDestroy, ViewChild } fr
 import {StudentsService} from '../../../../../service/students.service';
 import studentDTO from '../../../../../dto/studentDTO';
 
-interface Food {
+/*interface Food {
   value: string;
   viewValue: string;
-}
+}*/
 
 
 @Component({

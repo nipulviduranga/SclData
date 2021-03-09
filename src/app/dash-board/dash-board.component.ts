@@ -1,20 +1,14 @@
 import { Component, OnInit, ElementRef, HostListener, Input } from '@angular/core';
 import {animate, style, transition, trigger} from '@angular/animations';
+import {RouterOutlet} from '@angular/router';
+import {slideInAnimation} from './pages/my-class/grade12/grade12-marks/animations';
 
 @Component({
   selector: 'app-dash-board',
   templateUrl: './dash-board.component.html',
   styleUrls: ['./dash-board.component.scss'],
   animations: [
-    trigger('sliderLeft', [
-      transition('void=> *', [
-        style({transform: 'translateX(-100%)'}),
-        animate('0.1s')
-      ]),
-      transition( '* => void', [
-        animate('0.1s', style({transform: 'translateX(-100%)'}))
-      ])
-    ])
+    slideInAnimation
   ]
 })
 export class DashBoardComponent implements OnInit {
@@ -44,4 +38,7 @@ export class DashBoardComponent implements OnInit {
     }
   }*/
 
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
+  }
 }

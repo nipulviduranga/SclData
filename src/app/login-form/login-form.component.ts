@@ -16,7 +16,7 @@ export class LoginFormComponent implements OnInit {
 
 
   accessDashboard() {
-    this.router.navigate(['/DashBoard']).then(resp => {
+    this.router.navigate(['/DashBoard/Home']).then(resp => {
       console.log('Done');
     }).catch(error => {
       console.log(error);

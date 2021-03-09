@@ -51,6 +51,12 @@ import {MatFormFieldModule, MatLabel} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { MarksEnvironmentComponent } from './dash-board/pages/my-class/marks-environment/marks-environment.component';
+import {Environment} from '@angular/compiler-cli/src/ngtsc/typecheck/src/environment';
+import { ArtMarksComponent } from './dash-board/pages/my-class/grade12/grade12-marks/art-marks/art-marks.component';
+import { CommerceMarksComponent } from './dash-board/pages/my-class/grade12/grade12-marks/commerce-marks/commerce-marks.component';
+import { TecMarksComponent } from './dash-board/pages/my-class/grade12/grade12-marks/tec-marks/tec-marks.component';
+import { MathsMarksComponent } from './dash-board/pages/my-class/grade12/grade12-marks/maths-marks/maths-marks.component';
+import { BioMarksComponent } from './dash-board/pages/my-class/grade12/grade12-marks/bio-marks/bio-marks.component';
 
 
 @NgModule({
@@ -90,7 +96,13 @@ import { MarksEnvironmentComponent } from './dash-board/pages/my-class/marks-env
     Grade13PapersComponent,
     Grade13LessonsComponent,
     Grade13MarksComponent,
-    MarksEnvironmentComponent
+    MarksEnvironmentComponent,
+    ArtMarksComponent,
+    CommerceMarksComponent,
+    TecMarksComponent,
+    MathsMarksComponent,
+    BioMarksComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -103,7 +115,8 @@ import { MarksEnvironmentComponent } from './dash-board/pages/my-class/marks-env
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+
 
 
   ],

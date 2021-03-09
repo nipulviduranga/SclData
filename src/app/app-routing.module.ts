@@ -42,16 +42,21 @@ import {Grade12MarksComponent} from './dash-board/pages/my-class/grade12/grade12
 import {Grade13LessonsComponent} from './dash-board/pages/my-class/grade13/grade13-lessons/grade13-lessons.component';
 import {Grade13PapersComponent} from './dash-board/pages/my-class/grade13/grade13-papers/grade13-papers.component';
 import {Grade13MarksComponent} from './dash-board/pages/my-class/grade13/grade13-marks/grade13-marks.component';
+import {ArtMarksComponent} from './dash-board/pages/my-class/grade12/grade12-marks/art-marks/art-marks.component';
+import {CommerceMarksComponent} from './dash-board/pages/my-class/grade12/grade12-marks/commerce-marks/commerce-marks.component';
+import {TecMarksComponent} from './dash-board/pages/my-class/grade12/grade12-marks/tec-marks/tec-marks.component';
+import {MathsMarksComponent} from './dash-board/pages/my-class/grade12/grade12-marks/maths-marks/maths-marks.component';
+import {BioMarksComponent} from './dash-board/pages/my-class/grade12/grade12-marks/bio-marks/bio-marks.component';
 
 
 const routes: Routes = [
   {path:'',component:LoginFormComponent},
   {path:'DashBoard',component:DashBoardComponent,
     children:[
-      {path:'',component:DefaultPageComponent},
-      {path:'Home',component:HomeComponent},
-      {path:'TimeTables',component:TimeTablesComponent},
-      {path:'MyClass',component:MyClassComponent},
+      {path:'',component:DefaultPageComponent,data:{animation:'DefaultPage'}},
+      {path:'Home',component:HomeComponent,data:{animation:'HomePage'}},
+      {path:'TimeTables',component:TimeTablesComponent,data:{animation:'TimeTablesPage'}},
+      {path:'MyClass',component:MyClassComponent,data:{animation:'MyclassPage'}},
            {path:"Grade06",component:Grade06Component},
                 {path:"Grade06Lessons",component:Grade06LessonsComponent},
                 {path:"Grade06Papers",component:Grade06PapersComponent},
@@ -79,15 +84,22 @@ const routes: Routes = [
           {path:"Grade12",component:Grade12Component},
                 {path:"Grade12Lessons",component:Grade12LessonsComponent},
                 {path:"Grade12Papers",component:Grade12PapersComponent},
-                {path:"Grade12Marks",component:Grade12MarksComponent},
+                {path:"Grade12Marks",component:Grade12MarksComponent,data:{animation:'12MarksPage'},
+                  children:[
+                    {path:'Arts',component:ArtMarksComponent,data:{animation:'ArtsPage'}},
+                    {path:'Commerce',component:CommerceMarksComponent,data:{animation:'CommercePage'}},
+                    {path:'Tec',component:TecMarksComponent,data:{animation:'TecPage'}},
+                    {path:'Maths',component:MathsMarksComponent,data:{animation:'MathsPage'}},
+                    {path:'Bio',component:BioMarksComponent,data:{animation:'BioPage'}}
+                  ]},
           {path:"Grade13",component:Grade13Component},
                 {path:"Grade13Lessons",component:Grade13LessonsComponent},
                 {path:"Grade13Papers",component:Grade13PapersComponent},
                 {path:"Grade13Marks",component:Grade13MarksComponent},
 
-      {path:'NewsAndEvents',component:NewsAndEventsComponent},
-      {path:'About',component:AboutComponent},
-      {path:'logout',component:SignOutComponent}
+      {path:'NewsAndEvents',component:NewsAndEventsComponent,data:{animation:'NewsPage'}},
+      {path:'About',component:AboutComponent,data:{animation:'AboutPage'}},
+      {path:'logout',component:SignOutComponent,data:{animation:'LogoutPage'}}
     ]}
 ];
 
