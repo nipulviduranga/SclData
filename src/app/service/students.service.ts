@@ -13,6 +13,17 @@ export class StudentsService {
 baseurl = environment.baseUrl1;
   constructor(private http: HttpClient) { }
 
+  public registerUser(email:string,password:string): Observable<any>{
+    return this.http.post(this.baseurl+'registerUser', {
+     email,password
+    });
+  }
+  public loginUser(email:string,password:string): Observable<any>{
+    return this.http.get(this.baseurl+'loginUser', {
+      headers:{email,password}
+    });
+  }
+
   public saveStudent(dto: studentDTO, term: string): Observable<any>{
     console.log(dto);
     return this.http.post(this.baseurl+'saveStudent'+term,

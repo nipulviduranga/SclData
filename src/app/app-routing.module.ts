@@ -52,14 +52,17 @@ import {Commerce13MarksComponent} from './dash-board/pages/my-class/grade13/grad
 import {Tec13MarksComponent} from './dash-board/pages/my-class/grade13/grade13-marks/tec13-marks/tec13-marks.component';
 import {Maths13MarksComponent} from './dash-board/pages/my-class/grade13/grade13-marks/maths13-marks/maths13-marks.component';
 import {Bio13MarksComponent} from './dash-board/pages/my-class/grade13/grade13-marks/bio13-marks/bio13-marks.component';
+import {SignupFormComponent} from './signup-form/signup-form.component';
+import {AuthGuard} from './guard/auth.guard';
 const routes: Routes = [
   {path:'',component:LoginFormComponent},
+  {path:'SignUp',component:SignupFormComponent},
   {path:'DashBoard',component:DashBoardComponent,
     children:[
       {path:'',component:DefaultPageComponent,data:{animation:'DefaultPage'}},
       {path:'Home',component:HomeComponent,data:{animation:'HomePage'}},
       {path:'TimeTables',component:TimeTablesComponent,data:{animation:'TimeTablesPage'}},
-      {path:'MyClass',component:MyClassComponent,data:{animation:'MyclassPage'}},
+      {path:'MyClass',component:MyClassComponent,data:{animation:'MyclassPage'},canActivate:[AuthGuard]},
            {path:"Grade06",component:Grade06Component},
                 {path:"Grade06Lessons",component:Grade06LessonsComponent},
                 {path:"Grade06Papers",component:Grade06PapersComponent},

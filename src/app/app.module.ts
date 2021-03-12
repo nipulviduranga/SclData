@@ -62,6 +62,8 @@ import {Maths13MarksComponent} from './dash-board/pages/my-class/grade13/grade13
 import {Commerce13MarksComponent} from './dash-board/pages/my-class/grade13/grade13-marks/commerce13-marks/commerce13-marks.component';
 import {Art13MarksComponent} from './dash-board/pages/my-class/grade13/grade13-marks/art-marks13/art13-marks.component';
 import {Tec13MarksComponent} from './dash-board/pages/my-class/grade13/grade13-marks/tec13-marks/tec13-marks.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
+import {CookieModule} from 'ngx-cookie';
 
 
 
@@ -112,7 +114,8 @@ import {Tec13MarksComponent} from './dash-board/pages/my-class/grade13/grade13-m
     Maths13MarksComponent,
     Commerce13MarksComponent,
     Art13MarksComponent,
-    Tec13MarksComponent
+    Tec13MarksComponent,
+    SignupFormComponent
 
 
   ],
@@ -128,6 +131,7 @@ import {Tec13MarksComponent} from './dash-board/pages/my-class/grade13/grade13-m
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    CookieModule.forRoot()
 
 
 
