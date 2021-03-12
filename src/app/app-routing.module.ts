@@ -8,7 +8,6 @@ import {TimeTablesComponent} from './dash-board/pages/time-tables/time-tables.co
 import {NewsAndEventsComponent} from './dash-board/pages/news-and-events/news-and-events.component';
 import {AboutComponent} from './dash-board/pages/about/about.component';
 import {SignOutComponent} from './dash-board/pages/sign-out/sign-out.component';
-import {DefaultPageComponent} from './dash-board/pages/default-page/default-page.component';
 import {MyClassComponent} from './dash-board/pages/my-class/my-class.component';
 import {Grade06Component} from './dash-board/pages/my-class/grade06/grade06.component';
 import {Grade07Component} from './dash-board/pages/my-class/grade07/grade07.component';
@@ -54,12 +53,14 @@ import {Maths13MarksComponent} from './dash-board/pages/my-class/grade13/grade13
 import {Bio13MarksComponent} from './dash-board/pages/my-class/grade13/grade13-marks/bio13-marks/bio13-marks.component';
 import {SignupFormComponent} from './signup-form/signup-form.component';
 import {AuthGuard} from './guard/auth.guard';
+import {DefaultPageComponent} from './default-page/default-page.component';
 const routes: Routes = [
-  {path:'',component:LoginFormComponent},
+  {path:'',component:DefaultPageComponent,data:{animation:'DefaultPage'}},
+  {path:'Login',component:LoginFormComponent},
   {path:'SignUp',component:SignupFormComponent},
   {path:'DashBoard',component:DashBoardComponent,
     children:[
-      {path:'',component:DefaultPageComponent,data:{animation:'DefaultPage'}},
+
       {path:'Home',component:HomeComponent,data:{animation:'HomePage'}},
       {path:'TimeTables',component:TimeTablesComponent,data:{animation:'TimeTablesPage'}},
       {path:'MyClass',component:MyClassComponent,data:{animation:'MyclassPage'},canActivate:[AuthGuard]},

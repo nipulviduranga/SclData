@@ -13,7 +13,7 @@ import {CookieService} from 'ngx-cookie';
 export class LoginFormComponent implements OnInit {
   username='';
   password='';
-  constructor(public service: StudentsService,private cookieService:CookieService) { }
+  constructor(public service: StudentsService,private cookieService:CookieService,private router:Router) { }
 
 
 
@@ -33,7 +33,7 @@ export class LoginFormComponent implements OnInit {
 
       this.cookieService.put('tokenData',resp.token,cookieOption);
       alert('Success');
-
+      this.router.navigate(['/DashBoard/MyClass']).then();
     }else {
       alert('Please Try Again');
     }

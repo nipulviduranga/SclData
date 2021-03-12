@@ -16,8 +16,6 @@ import { HomeComponent } from './dash-board/pages/home/home.component';
 import { NewsAndEventsComponent } from './dash-board/pages/news-and-events/news-and-events.component';
 import { TimeTablesComponent } from './dash-board/pages/time-tables/time-tables.component';
 
-import { DefaultPageComponent } from './dash-board/pages/default-page/default-page.component';
-import { CardsComponent } from './dash-board/pages/default-page/items/cards/cards.component';
 import { AboutComponent } from './dash-board/pages/about/about.component';
 import { SignOutComponent } from './dash-board/pages/sign-out/sign-out.component';
 
@@ -64,6 +62,7 @@ import {Art13MarksComponent} from './dash-board/pages/my-class/grade13/grade13-m
 import {Tec13MarksComponent} from './dash-board/pages/my-class/grade13/grade13-marks/tec13-marks/tec13-marks.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import {CookieModule} from 'ngx-cookie';
+import {DefaultPageComponent} from './default-page/default-page.component';
 
 
 
@@ -75,8 +74,6 @@ import {CookieModule} from 'ngx-cookie';
     HomeComponent,
     NewsAndEventsComponent,
     TimeTablesComponent,
-    DefaultPageComponent,
-    CardsComponent,
     AboutComponent,
     SignOutComponent,
     MyClassComponent,
@@ -115,7 +112,8 @@ import {CookieModule} from 'ngx-cookie';
     Commerce13MarksComponent,
     Art13MarksComponent,
     Tec13MarksComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    DefaultPageComponent
 
 
   ],
