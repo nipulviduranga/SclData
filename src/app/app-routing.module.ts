@@ -60,7 +60,6 @@ const routes: Routes = [
   {path:'SignUp',component:SignupFormComponent},
   {path:'DashBoard',component:DashBoardComponent,
     children:[
-
       {path:'Home',component:HomeComponent,data:{animation:'HomePage'}},
       {path:'TimeTables',component:TimeTablesComponent,data:{animation:'TimeTablesPage'}},
       {path:'MyClass',component:MyClassComponent,data:{animation:'MyclassPage'},canActivate:[AuthGuard]},

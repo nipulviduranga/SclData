@@ -3,6 +3,8 @@ import {Router} from '@angular/router';
 import * as React from 'react';
 import {StudentsService} from '../service/students.service';
 import {CookieService} from 'ngx-cookie';
+import UserNameDTO from '../dto/UserNameDTO';
+import {DashBoardComponent} from '../dash-board/dash-board.component';
 
 
 @Component({
@@ -13,27 +15,30 @@ import {CookieService} from 'ngx-cookie';
 export class LoginFormComponent implements OnInit {
   username='';
   password='';
-  constructor(public service: StudentsService,private cookieService:CookieService,private router:Router) { }
+  constructor(public service: StudentsService,private cookieService:CookieService,private router:Router,private dashboard:DashBoardComponent) { }
 
 
 
   ngOnInit(): void {
+    const UserName = new UserNameDTO(this.username);
+    this.dashboard.setUsername(UserName);
   }
 
 
   LoginUser() {
   this.service.loginUser(this.username,this.password).subscribe(resp=>{
-    if(resp.message==='sucess'){
+    console.log(resp);
+    if(resp.message==='success'){
       const todayDate=new Date();
-      const nextweek = new Date(todayDate);
-      nextweek.setDate(nextweek.getDate()+7);
+      const tomorrow = new Date(todayDate);
+      tomorrow.setDate(tomorrow.getDate()+1);
       const cookieOption={
-        expires:nextweek
+        expires: tomorrow
       };
 
-      this.cookieService.put('tokenData',resp.token,cookieOption);
-      alert('Success');
+      this.cookieService.put('tokenData',resp.token, cookieOption);
       this.router.navigate(['/DashBoard/MyClass']).then();
+
     }else {
       alert('Please Try Again');
     }

@@ -13,31 +13,20 @@ import {slideInAnimation} from './pages/my-class/grade12/grade12-marks/animation
 })
 export class DashBoardComponent implements OnInit {
 
-  leftSideVisibleState = false;
   constructor() { }
-
+  userName = '';
   ngOnInit(): void {
+
+
+
   }
-
-  toggleSlide() {
-/*
-     if (this.leftSideVisibleState){
-       this.leftSideVisibleState=false;
-     }else{
-       this.leftSideVisibleState=true;
-     }
-*/
-
-    this.leftSideVisibleState = !this.leftSideVisibleState;
-  }
- /* @HostListener('document:click')
-  clickInside() {
-    if (this.leftSideVisibleState === true) {
-
-      console.log(this.leftSideVisibleState);
+  setUsername(dto: any){
+    if(dto.username != ''){
+      this.userName = dto.username;
+    }else {
+      this.userName = 'User Name';
     }
-  }*/
-
+  }
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
   }
