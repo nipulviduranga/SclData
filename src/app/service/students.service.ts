@@ -11,6 +11,20 @@ import studentALDTO from '../dto/studentALDTO';
 })
 export class StudentsService {
 baseurl = environment.baseUrl1;
+username='';
+UserAdmin='admin';
+
+public getUserName(){
+  return this.username;
+}
+public varifyAdmin(){
+  if (this.username === this.UserAdmin){
+    return true;
+
+  }else {
+    return  false;
+  }
+}
   constructor(private http: HttpClient) { }
 
   public registerUser(email:string,password:string): Observable<any>{
@@ -19,6 +33,7 @@ baseurl = environment.baseUrl1;
     });
   }
   public loginUser(email:string,password:string): Observable<any>{
+  this.username=email;
     return this.http.get(this.baseurl+'loginUser', {
       headers:{email,password}
     });

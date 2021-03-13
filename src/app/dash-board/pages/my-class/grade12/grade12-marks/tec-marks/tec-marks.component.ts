@@ -47,6 +47,7 @@ export class TecMarksComponent implements OnInit {
   subGeographyForUpdate = 0;
   subGITForUpdate = 0;
   term = 'Grade12TecTerm1';
+  isHidden = this.studentsService.varifyAdmin();
 
   constructor(private studentsService: StudentsService) { }
   // dropdown data

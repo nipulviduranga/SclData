@@ -45,6 +45,7 @@ export class BioMarksComponent implements OnInit {
   subAgryForUpdate = 0;
   subGITForUpdate = 0;
   term = 'Grade12MathsTerm1';
+  isHidden = this.studentsService.varifyAdmin();
 
   constructor(private studentsService: StudentsService) { }
   // dropdown data

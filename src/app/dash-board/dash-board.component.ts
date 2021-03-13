@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, HostListener, Input } from '@angular/cor
 import {animate, style, transition, trigger} from '@angular/animations';
 import {RouterOutlet} from '@angular/router';
 import {slideInAnimation} from './pages/my-class/grade12/grade12-marks/animations';
+import {StudentsService} from '../service/students.service';
 
 @Component({
   selector: 'app-dash-board',
@@ -13,16 +14,16 @@ import {slideInAnimation} from './pages/my-class/grade12/grade12-marks/animation
 })
 export class DashBoardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:StudentsService) { }
   userName = '';
   ngOnInit(): void {
-
-
+  var userName=this.service.getUserName();
+  this.setUsername(userName);
 
   }
-  setUsername(dto: any){
-    if(dto.username != ''){
-      this.userName = dto.username;
+  setUsername(data: string){
+    if(data != ''){
+      this.userName = data;
     }else {
       this.userName = 'User Name';
     }

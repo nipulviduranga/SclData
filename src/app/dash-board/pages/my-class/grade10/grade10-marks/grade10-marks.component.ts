@@ -36,6 +36,7 @@ export class Grade10MarksComponent implements OnInit {
   subHistoryForUpdate = 0;
 
   term = 'Grade10Term1';
+  isHidden = this.studentsService.varifyAdmin();
 
   constructor(private studentsService: StudentsService) { }
   // dropdown data

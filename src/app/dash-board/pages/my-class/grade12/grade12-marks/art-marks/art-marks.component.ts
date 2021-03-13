@@ -56,6 +56,7 @@ export class ArtMarksComponent implements OnInit {
   subPoliticsForUpdate = 0;
   subGITForUpdate = 0;
   term = 'Grade12ArtTerm1';
+  isHidden = this.studentsService.varifyAdmin();
 
   constructor(private studentsService: StudentsService) { }
   // dropdown data

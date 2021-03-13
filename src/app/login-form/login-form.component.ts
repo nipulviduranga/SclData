@@ -3,7 +3,6 @@ import {Router} from '@angular/router';
 import * as React from 'react';
 import {StudentsService} from '../service/students.service';
 import {CookieService} from 'ngx-cookie';
-import UserNameDTO from '../dto/UserNameDTO';
 import {DashBoardComponent} from '../dash-board/dash-board.component';
 
 
@@ -15,13 +14,12 @@ import {DashBoardComponent} from '../dash-board/dash-board.component';
 export class LoginFormComponent implements OnInit {
   username='';
   password='';
-  constructor(public service: StudentsService,private cookieService:CookieService,private router:Router,private dashboard:DashBoardComponent) { }
+  constructor(public service: StudentsService,private cookieService:CookieService,private router:Router) { }
 
 
 
   ngOnInit(): void {
-    const UserName = new UserNameDTO(this.username);
-    this.dashboard.setUsername(UserName);
+
   }
 
 

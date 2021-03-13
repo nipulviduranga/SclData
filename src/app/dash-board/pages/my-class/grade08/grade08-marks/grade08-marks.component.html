@@ -19,7 +19,7 @@
         </mat-form-field>
       </div>
     </div>
-    <div class="form-row">
+    <div class="form-row" *ngIf="isHidden">
       <div class="col-md-1 mb-3">
         <label for="validationCustom03">Tamil</label>
         <input [(ngModel)]="subTamil" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="validationCustom02"  >
@@ -90,7 +90,7 @@
     <div class="btn-set form-row">
       <button class="btn btn-primary" type="submit" (click)="searchStudent()">Search</button>
       <button class="btn btn-primary" type="submit" (click)="loadData(term)">All</button>
-      <button class="btn btn-primary" type="submit" (click)="saveStudent(term)">Save</button>
+      <button class="btn btn-primary" type="submit" (click)="saveStudent(term)" *ngIf="isHidden">Save</button>
     </div>
 
   </form>
@@ -114,7 +114,7 @@
     <th scope="col">Tamil</th>
     <th scope="col">Aesrhetics</th>
     <th scope="col">Total</th>
-    <th scope="col">Option</th>
+    <th scope="col" *ngIf="isHidden">Option</th>
 
 
 
@@ -138,7 +138,7 @@
     <td>{{students.SubTamil}}</td>
     <td>{{students.SubAesrhetics}}</td>
     <td>{{students.Total}}</td>
-    <td>
+    <td *ngIf="isHidden">
       <p>
         <button class="btn btn-sm btn-success" (click)="openModel(students,students._id)">Update</button>
         <button class="btn btn-sm btn-danger" (click)="deleteCustomer(students._id,term)">Delete</button>

@@ -43,6 +43,7 @@ export class Grade07MarksComponent implements OnInit {
   subHistoryForUpdate = 0;
 
   term = 'Grade07Term1';
+  isHidden = this.studentsService.varifyAdmin();
 
   constructor(private studentsService: StudentsService) { }
   // dropdown data
@@ -53,7 +54,6 @@ export class Grade07MarksComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-
   }
 
   loadData(term: string){
