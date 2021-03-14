@@ -5,6 +5,8 @@ import { Observable, throwError } from 'rxjs';
 import {environment} from '../../environments/environment';
 import student10to11DTO from '../dto/student10to11DTO';
 import studentALDTO from '../dto/studentALDTO';
+import NewsEventsDTO from '../dto/News&EventsDTO';
+import {publicDecrypt} from 'crypto';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +28,40 @@ public varifyAdmin(){
   }
 }
   constructor(private http: HttpClient) { }
+/////////////////////////////////News And Event///////////////////////////////////////////////////////////////
+  public saveNews(dto:NewsEventsDTO):Observable<any> {
+    console.log(dto);
+    return this.http.post(this.baseurl + 'saveNews', {
+      title: dto.Title,
+      date: dto.Date,
+      imgUrl: dto.ImgUrl,
+      content: dto.Content
+    });
+  }
+  public getNews():Observable<any>{
+    return this.http.get(this.baseurl+'getNews',
+      {
+        observe: 'body',
+          responseType: 'json'
+    });
+    }
+  public updateNews(dto: NewsEventsDTO,id:string):Observable<any>{
+  console.log(dto);
+  return this.http.put(this.baseurl+'updateNews',{
+    title: dto.Title,
+    date: dto.Date,
+    imgUrl: dto.ImgUrl,
+    content: dto.Content,
+    id:id
+  });
+  }
+  public deleteNews(id:string):Observable<any>{
+  return this.http.delete(this.baseurl+'deleteNews',
+    {
+    headers:{id}
+    });
+  }
+////////////////////////////////////Login////////////////////////////////////////////////////////////////////////
 
   public registerUser(email:string,password:string): Observable<any>{
     return this.http.post(this.baseurl+'registerUser', {
@@ -38,7 +74,7 @@ public varifyAdmin(){
       headers:{email,password}
     });
   }
-
+///////////////////////////////////////Student/////////////////////////////////////////////////////////////////////////
   public saveStudent(dto: studentDTO, term: string): Observable<any>{
     console.log(dto);
     return this.http.post(this.baseurl+'saveStudent'+term,
