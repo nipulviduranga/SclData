@@ -27,13 +27,13 @@ export class NewsAndEventsComponent implements OnInit {
     this.Date=today.toLocaleString();
     console.log(today.toLocaleString());
     this.loadData();
-    this.loadImage();
+    /*this.loadImage();*/
   }
 
-  loadImage(){
-   const img=document.getElementById('newsImg') as HTMLImageElement;
-    img.src=this.ImgUrl;
-  }
+/*  loadImage(){
+   const imge =document.getElementById('newsImg') as HTMLImageElement;
+    imge.src= 'https://images.unsplash.com/photo-1496979551903-46e46589a88b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cda12b505afa1beb06e49d89014cbd65&auto=format&fit=crop&w=634&q=80';
+  }*/
 loadData(){
     this.service.getNews().subscribe(result=>{
       this.newsArray=result.dataSet;

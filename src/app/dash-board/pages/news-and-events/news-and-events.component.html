@@ -23,7 +23,7 @@
           </div>
           <div class="form-group">
             <label for="img-url" class="col-form-label">Image Url:</label>
-            <input type="text" class="form-control" id="img-url"  [(ngModel)]="ImgUrl">
+            <input type="text" class="form-control" id="img-url"  [(ngModel)]="ImgUrl" placeholder="400x400">
 
           </div>
           <div class="form-group">
@@ -71,7 +71,7 @@
           </div>
           <div class="form-group">
             <label for="img-url" class="col-form-label">Image Url:</label>
-            <input type="text" class="form-control" id="img-urlForUpdate"  [(ngModel)]="ImgUrlForUpdate">
+            <input type="text" class="form-control" id="img-urlForUpdate" placeholder="400x400" [(ngModel)]="ImgUrlForUpdate">
 
           </div>
           <div class="form-group">
@@ -98,7 +98,7 @@
 <div *ngFor="let news of newsArray">
   <div class="example-1 card">
     <div class="wrapper">
-      <img id="newsImg" src="" class="img" alt="img">
+      <img id="newsImg" [src]="news.ImgUrl" class="img" alt="img">
 
       <div class="date">
         {{news.Date}}
