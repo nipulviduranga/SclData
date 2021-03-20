@@ -16,13 +16,15 @@ export class StudentsService {
 baseurl = environment.baseUrl1;
 
 username='';
-UserAdmin='admin';
+password = '';
+UserAdmin=environment.UserAdmin;
+PasswordAdmin=environment.UserPassword;
 
 public getUserName(){
   return this.username;
 }
 public varifyAdmin(){
-  if (this.username === this.UserAdmin){
+  if (this.username === this.UserAdmin && this.password === this.PasswordAdmin){
     return true;
 
   }else {
@@ -72,6 +74,7 @@ public varifyAdmin(){
   }
   public loginUser(email:string,password:string): Observable<any>{
   this.username=email;
+  this.password=password;
     return this.http.get(this.baseurl+'loginUser', {
       headers:{email,password}
     });
