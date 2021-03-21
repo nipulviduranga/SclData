@@ -17,8 +17,8 @@ baseurl = environment.baseUrl1;
 
 username='';
 password = '';
-UserAdmin=environment.UserAdmin;
-PasswordAdmin=environment.UserPassword;
+UserAdmin= environment.UserAdmin;
+PasswordAdmin= environment.UserPassword;
 
 public getUserName(){
   return this.username;
