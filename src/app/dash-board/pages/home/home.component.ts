@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {fadeInAnimation} from '../../../animations/FadeInAnimation';
 
 @Component({
   selector: 'app-home',

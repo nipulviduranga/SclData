@@ -7,6 +7,7 @@ import student10to11DTO from '../dto/student10to11DTO';
 import studentALDTO from '../dto/studentALDTO';
 import NewsEventsDTO from '../dto/News&EventsDTO';
 import {publicDecrypt} from 'crypto';
+import PapersLessonsDTO from '../dto/Papers&LessonsDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,7 @@ username='';
 password = '';
 UserAdmin= environment.UserAdmin;
 PasswordAdmin= environment.UserPassword;
+isloggedin=false;
 
 public getUserName(){
   return this.username;
@@ -64,6 +66,28 @@ public varifyAdmin(){
     {
     headers:{id}
     });
+  }
+  //////////////////////////////////Papers and Lessons///////////////////////////////////////////////////////////
+  public saveData(dto:PapersLessonsDTO):Observable<any> {
+    console.log(dto);
+    return this.http.post(this.baseurl + 'savePapersAndLessons', {
+      topic: dto.Topic,
+      link: dto.Link,
+      other: dto.GradeAndData
+    });
+  }
+  public getData():Observable<any>{
+    return this.http.get(this.baseurl+'getPapersAndLessons',
+      {
+        observe: 'body',
+        responseType: 'json'
+      });
+  }
+  public deleteData(id:string):Observable<any>{
+    return this.http.delete(this.baseurl+'deletePapersAndLessons',
+      {
+        headers:{id}
+      });
   }
 ////////////////////////////////////Login////////////////////////////////////////////////////////////////////////
 

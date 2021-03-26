@@ -1,0 +1,165 @@
+<div>
+  <ul>
+    <li>
+      <div class="grade-box">
+        GRADE 06
+      </div>
+      <div class="line"></div>
+      <button class="btn-outline-primary btn include-btn" (click)="openModel('Grade06Papers')" *ngIf="isHidden">Add Data</button>
+      <div *ngFor="let data of grade06Array">
+        <span>{{data.Topic}}</span>
+        <a [href]='data.Link' type="button" class="download-link">Download</a>
+        <button class="btn-outline-danger btn delete include-btn" (click)="deleteData(data._id)" *ngIf="isHidden">Delete</button>
+      </div>
+    </li>
+
+  </ul>
+  <ul>
+    <li>
+      <div class="grade-box">
+        GRADE 07
+      </div>
+      <div class="line"></div>
+      <button class="btn-outline-primary btn include-btn" (click)="openModel('Grade07Papers')" *ngIf="isHidden">Add Data</button>
+      <div *ngFor="let data of grade07Array">
+        <span>{{data.Topic}}</span>
+        <a [href]='data.Link' type="button" class="download-link">Download</a>
+        <button class="btn-outline-danger btn delete include-btn" (click)="deleteData(data._id)" *ngIf="isHidden">Delete</button>
+      </div>
+    </li>
+
+  </ul>
+  <ul>
+    <li>
+      <div class="grade-box">
+        GRADE 08
+      </div>
+      <div class="line"></div>
+      <button class="btn-outline-primary btn include-btn" (click)="openModel('Grade08Papers')" *ngIf="isHidden">Add Data</button>
+      <div *ngFor="let data of grade08Array">
+        <span>{{data.Topic}}</span>
+        <a [href]='data.Link' type="button" class="download-link">Download</a>
+        <button class="btn-outline-danger btn delete include-btn" (click)="deleteData(data._id)" *ngIf="isHidden">Delete</button>
+      </div>
+    </li>
+
+  </ul>
+  <ul>
+    <li>
+      <div class="grade-box">
+        GRADE 09
+      </div>
+      <div class="line"></div>
+      <button class="btn-outline-primary btn include-btn" (click)="openModel('Grade09Papers')" *ngIf="isHidden">Add Data</button>
+      <div *ngFor="let data of grade09Array">
+        <span>{{data.Topic}}</span>
+        <a [href]='data.Link' type="button" class="download-link">Download</a>
+        <button class="btn-outline-danger btn delete include-btn" (click)="deleteData(data._id)" *ngIf="isHidden">Delete</button>
+      </div>
+    </li>
+
+  </ul>
+  <ul>
+    <li>
+      <div class="grade-box">
+        GRADE 10
+      </div>
+      <div class="line"></div>
+      <button class="btn-outline-primary btn include-btn" (click)="openModel('Grade10Papers')" *ngIf="isHidden">Add Data</button>
+      <div *ngFor="let data of grade10Array">
+        <span>{{data.Topic}}</span>
+        <a [href]='data.Link' type="button" class="download-link">Download</a>
+        <button class="btn-outline-danger btn delete include-btn" (click)="deleteData(data._id)" *ngIf="isHidden">Delete</button>
+      </div>
+    </li>
+
+  </ul>
+  <ul>
+    <li>
+      <div class="grade-box">
+        GRADE 11
+      </div>
+      <div class="line"></div>
+      <button class="btn-outline-primary btn include-btn" (click)="openModel('Grade11Papers')" *ngIf="isHidden">Add Data</button>
+      <div *ngFor="let data of grade11Array">
+        <span>{{data.Topic}}</span>
+        <a [href]='data.Link' type="button" class="download-link">Download</a>
+        <button class="btn-outline-danger btn delete include-btn" (click)="deleteData(data._id)" *ngIf="isHidden">Delete</button>
+      </div>
+    </li>
+
+  </ul>
+  <ul>
+    <li>
+      <div class="grade-box">
+        GRADE 12
+      </div>
+      <div class="line"></div>
+      <button class="btn-outline-primary btn include-btn" (click)="openModel('Grade12Papers')" *ngIf="isHidden">Add Data</button>
+      <div *ngFor="let data of grade12Array">
+        <span>{{data.Topic}}</span>
+        <a [href]='data.Link' type="button" class="download-link">Download</a>
+        <button class="btn-outline-danger btn delete include-btn" (click)="deleteData(data._id)" *ngIf="isHidden">Delete</button>
+      </div>
+    </li>
+
+  </ul>
+  <ul>
+    <li>
+      <div class="grade-box">
+        GRADE 13
+      </div>
+      <div class="line"></div>
+      <button class="btn-outline-primary btn include-btn" (click)="openModel('Grade13Papers')" *ngIf="isHidden">Add Data</button>
+      <div *ngFor="let data of grade13Array">
+        <span>{{data.Topic}}</span>
+        <a [href]='data.Link' type="button" class="download-link">Download</a>
+        <button class="btn-outline-danger btn delete include-btn" (click)="deleteData(data._id)" *ngIf="isHidden">Delete</button>
+      </div>
+
+    </li>
+
+  </ul>
+</div>
+<button id="AddPapersAndLessons" type="button" class="btn btn-primary openModal" data-toggle="modal" data-target="#DataAddModal" >Add Data</button>
+
+<div class="modal fade needs-validation" id="DataAddModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" novalidate>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New News</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="title" class="col-form-label" >Topic:</label>
+            <input type="text" class="form-control" id="title" [(ngModel)]="Topic" required #title="ngModel" name="title" placeholder="required">
+          </div>
+          <div *ngIf="title.invalid && (title.dirty || title.touched)"
+               class="alert alert-danger">
+            <div *ngIf="title.errors.required">
+              Content is required.
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="content" class="col-form-label" >Link:</label>
+            <textarea class="form-control" id="content" [(ngModel)]="Link" #content="ngModel" required placeholder="required"></textarea>
+            <div *ngIf="content.invalid && (content.dirty || content.touched)"
+                 class="alert alert-danger">
+              <div *ngIf="content.errors.required">
+                Content is required.
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" (click)="saveData()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

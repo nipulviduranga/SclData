@@ -3,6 +3,7 @@ import {animate, style, transition, trigger} from '@angular/animations';
 import {RouterOutlet} from '@angular/router';
 import {slideInAnimation} from './pages/my-class/grade12/grade12-marks/animations';
 import {StudentsService} from '../service/students.service';
+import {ManageAccountService} from '../service/manage-account.service';
 
 @Component({
   selector: 'app-dash-board',
@@ -14,13 +15,16 @@ import {StudentsService} from '../service/students.service';
 })
 export class DashBoardComponent implements OnInit {
 
-  constructor(private service:StudentsService) { }
+  constructor(private service:StudentsService,private manageAccountService:ManageAccountService) { }
   userName = '';
   ngOnInit(): void {
   var userName=this.service.getUserName();
   this.setUsername(userName);
 
+
   }
+  isLoggedin=this.service.isloggedin;
+
   setUsername(data: string){
     if(data != ''){
       this.userName = data;
@@ -30,5 +34,10 @@ export class DashBoardComponent implements OnInit {
   }
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
+  }
+
+  logOut() {
+    this.isLoggedin=false;
+    this.manageAccountService.logOut();
   }
 }

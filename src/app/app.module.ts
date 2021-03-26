@@ -14,7 +14,6 @@ import {MatIconModule} from '@angular/material/icon';
 import { DashBoardComponent } from './dash-board/dash-board.component';
 import { HomeComponent } from './dash-board/pages/home/home.component';
 import { NewsAndEventsComponent } from './dash-board/pages/news-and-events/news-and-events.component';
-import { TimeTablesComponent } from './dash-board/pages/time-tables/time-tables.component';
 
 import { AboutComponent } from './dash-board/pages/about/about.component';
 import { SignOutComponent } from './dash-board/pages/sign-out/sign-out.component';
@@ -63,6 +62,8 @@ import {Tec13MarksComponent} from './dash-board/pages/my-class/grade13/grade13-m
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import {CookieModule} from 'ngx-cookie';
 import {DefaultPageComponent} from './default-page/default-page.component';
+import { PapersComponent } from './dash-board/papers/papers.component';
+import { LessonsComponent } from './dash-board/lessons/lessons.component';
 
 
 
@@ -73,7 +74,6 @@ import {DefaultPageComponent} from './default-page/default-page.component';
     DashBoardComponent,
     HomeComponent,
     NewsAndEventsComponent,
-    TimeTablesComponent,
     AboutComponent,
     SignOutComponent,
     MyClassComponent,
@@ -113,7 +113,9 @@ import {DefaultPageComponent} from './default-page/default-page.component';
     Art13MarksComponent,
     Tec13MarksComponent,
     SignupFormComponent,
-    DefaultPageComponent
+    DefaultPageComponent,
+    PapersComponent,
+    LessonsComponent
 
 
   ],

@@ -23,10 +23,12 @@ export class LoginFormComponent implements OnInit {
   }
 
 
+
   LoginUser() {
   this.service.loginUser(this.username,this.password).subscribe(resp=>{
     console.log(resp);
     if(resp.message==='success'){
+      this.service.isloggedin=true;
       const todayDate=new Date();
       const tomorrow = new Date(todayDate);
       tomorrow.setDate(tomorrow.getDate()+1);

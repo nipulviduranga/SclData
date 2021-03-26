@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {StudentsService} from '../../../service/students.service';
 import NewsEventsDTO from '../../../dto/News&EventsDTO';
+import {fadeInAnimation} from '../../../animations/FadeInAnimation';
 
 @Component({
   selector: 'app-news-and-events',
   templateUrl: './news-and-events.component.html',
-  styleUrls: ['./news-and-events.component.scss']
+  styleUrls: ['./news-and-events.component.scss'],
+  animations: [fadeInAnimation]
 })
 export class NewsAndEventsComponent implements OnInit {
   newsArray=[];

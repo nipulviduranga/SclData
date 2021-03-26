@@ -54,16 +54,31 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" routerLink="/DashBoard/TimeTables" routerLinkActive="active">
-          <i class="fa fa-calendar"></i>
-          Time Tables
+        <a class="nav-link" href="#" routerLink="/DashBoard/Papers" routerLinkActive="active">
+          <i class="fa fa-file-text"></i>
+          Papers
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="/DashBoard/Lessons" routerLinkActive="active">
+          <i class="fa fa-safari"></i>
+          Lessons
+        </a>
+      </li>
+
+    </ul>
+    <ul class="navbar-nav " *ngIf="isLoggedin">
+      <li class="nav-item">
+        <a class="nav-link" href="#" (click)="logOut()">
+          <i class="fa fa-sign-out"></i>
+          Sign Out
         </a>
       </li>
     </ul>
     <ul class="navbar-nav ">
       <li class="nav-item">
         <a class="nav-link" href="#">
-          <i class="fa fa-id-card"></i>
+          <i class="fa fa-user-circle-o"></i>
           {{userName}}
         </a>
       </li>

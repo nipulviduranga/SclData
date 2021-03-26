@@ -1,0 +1,41 @@
+.line{
+
+  width: 100%;
+  height: 2px;
+  background-color: blue;
+
+}
+.grade-box{
+  width: 100px;
+  height: 30px;
+  background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+  text-align: center;
+  margin-top: 5px;
+  border-radius: 5px;
+  font-size: 20px;
+  padding-top: 3px;
+}
+li{
+  list-style: none;
+}
+.include-btn{
+  padding:1px;
+  margin: 2px;
+}
+.delete{
+  margin-left: 10px;
+}
+.download-link{
+  margin-left: 20px;
+}
+.openModal{
+  display: none;
+}
+.topic{
+  font-size: 16px;
+  font-family: Roboto;
+  margin: 5px;
+}
+.load{
+  margin: 5px
+}

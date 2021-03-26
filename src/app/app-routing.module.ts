@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {LoginFormComponent} from './login-form/login-form.component';
 import {DashBoardComponent} from './dash-board/dash-board.component';
 import {HomeComponent} from './dash-board/pages/home/home.component';
-import {TimeTablesComponent} from './dash-board/pages/time-tables/time-tables.component';
+
 
 import {NewsAndEventsComponent} from './dash-board/pages/news-and-events/news-and-events.component';
 import {AboutComponent} from './dash-board/pages/about/about.component';
@@ -54,6 +54,8 @@ import {Bio13MarksComponent} from './dash-board/pages/my-class/grade13/grade13-m
 import {SignupFormComponent} from './signup-form/signup-form.component';
 import {AuthGuard} from './guard/auth.guard';
 import {DefaultPageComponent} from './default-page/default-page.component';
+import {PapersComponent} from './dash-board/papers/papers.component';
+import {LessonsComponent} from './dash-board/lessons/lessons.component';
 const routes: Routes = [
   {path:'',component:DefaultPageComponent,data:{animation:'DefaultPage'}},
   {path:'Login',component:LoginFormComponent},
@@ -61,7 +63,8 @@ const routes: Routes = [
   {path:'DashBoard',component:DashBoardComponent,
     children:[
       {path:'Home',component:HomeComponent,data:{animation:'HomePage'}},
-      {path:'TimeTables',component:TimeTablesComponent,data:{animation:'TimeTablesPage'}},
+      {path:'Papers',component:PapersComponent,data:{animation:'Papers'}},
+      {path:'Lessons',component:LessonsComponent,data:{animation:'Lessons'}},
       {path:'MyClass',component:MyClassComponent,data:{animation:'MyclassPage'},canActivate:[AuthGuard]},
            {path:"Grade06",component:Grade06Component},
                 {path:"Grade06Lessons",component:Grade06LessonsComponent},
